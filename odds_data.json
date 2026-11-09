@@ -1,0 +1,122 @@
+[
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "football",
+    "matchFormatted": "Minnesota Vikings (+154) vs. Buffalo Bills (-185)",
+    "leadML": -185,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "football",
+    "matchFormatted": "Washington Commanders (+105) vs. New York Giants (-125)",
+    "leadML": -125,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "football",
+    "matchFormatted": "New England Patriots (+124) vs. Detroit Lions (-148)",
+    "leadML": -148,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "football",
+    "matchFormatted": "Atlanta Falcons (+145) vs. Kansas City Chiefs (-175)",
+    "leadML": -175,
+    "gap": 43
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "basketball",
+    "matchFormatted": "Los Angeles Lakers (+100) vs. Atlanta Hawks (-118)",
+    "leadML": -118,
+    "gap": 21
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "basketball",
+    "matchFormatted": "Charlotte Hornets (+290) vs. Cleveland Cavaliers (-360)",
+    "leadML": -360,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "basketball",
+    "matchFormatted": "Washington Wizards (+380) vs. Detroit Pistons (-490)",
+    "leadML": -490,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "basketball",
+    "matchFormatted": "Memphis Grizzlies (+130) vs. Toronto Raptors (-154)",
+    "leadML": -154,
+    "gap": 14
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "hockey",
+    "matchFormatted": "New York Rangers (+130) vs. Edmonton Oilers (-156)",
+    "leadML": -156,
+    "gap": 32
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "hockey",
+    "matchFormatted": "Vancouver Canucks (+114) vs. Philadelphia Flyers (-137)",
+    "leadML": -137,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "hockey",
+    "matchFormatted": "San Jose Sharks (+116) vs. New York Islanders (-142)",
+    "leadML": -142,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "soccer",
+    "matchFormatted": "Galatasaray (+155) vs. Aston Villa (+148)",
+    "leadML": 148,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "soccer",
+    "matchFormatted": "LASK (+460) vs. Bod\u00f8/Glimt (-200)",
+    "leadML": -200,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "soccer",
+    "matchFormatted": "AEK Athens (+700) vs. Como (-295)",
+    "leadML": -295,
+    "gap": 25
+  },
+  {
+    "isSpread": false,
+    "timeframe": "weekly",
+    "sport": "soccer",
+    "matchFormatted": "Borussia Dortmund (+650) vs. Arsenal (-250)",
+    "leadML": -250,
+    "gap": 41
+  }
+]

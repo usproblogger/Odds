@@ -8,7 +8,6 @@ REGION = "us"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
 
-# Grouped targets to guarantee representation across all categories
 SPORT_GROUPS = {
     "tennis": [
         "tennis_atp_challenger",
@@ -36,14 +35,11 @@ SPORT_GROUPS = {
 }
 
 NAME_BUZZ = {
-    # Tennis Stars
     "djokovic": 95, "alcaraz": 96, "sinner": 94, "medvedev": 90, 
     "zverev": 88, "tsitsipas": 85, "rublev": 83, "rune": 84,
-    "swiatek": 95, "sabalenka": 93, "gauff": 94, "rybakina": 90, "sabalenka": 92,
-    # Soccer Clubs & Nations
+    "swiatek": 95, "sabalenka": 93, "gauff": 94, "rybakina": 90,
     "real madrid": 96, "barcelona": 95, "arsenal": 90, "bayern": 92,
-    "manchester city": 94, "liverpool": 93, "france": 92, "spain": 93, "germany": 90,
-    # US Major Teams
+    "manchester city": 94, "liverpool": 93, "france": 92, "spain": 93,
     "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
     "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
     "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
@@ -67,6 +63,16 @@ def is_within_7_days(date_str):
         return 0 <= delta_days <= 7
     except Exception:
         return False
+
+def to_american_odds(decimal_odds):
+    if not decimal_odds or decimal_odds <= 1.0:
+        return "-110"
+    if decimal_odds >= 2.0:
+        ml = int(round((decimal_odds - 1.0) * 100))
+        return f"+{ml}"
+    else:
+        ml = int(round(-100 / (decimal_odds - 1.0)))
+        return f"{ml}"
 
 def fetch_group_matches(group_label, sport_keys, limit=3):
     matches = []
@@ -114,33 +120,39 @@ def fetch_group_matches(group_label, sport_keys, limit=3):
                 if len(h2h_outcomes) < 2:
                     continue
 
-                p1 = h2h_outcomes[0].get("price")
-                p2 = h2h_outcomes[1].get("price")
-                name1 = h2h_outcomes[0].get("name")
-                name2 = h2h_outcomes[1].get("name")
+                # Match outcome prices to away and home sides
+                away_price = None
+                home_price = None
+                for out in h2h_outcomes:
+                    out_name = out.get("name", "")
+                    if out_name == away_team:
+                        away_price = out.get("price")
+                    elif out_name == home_team:
+                        home_price = out.get("price")
 
-                if not p1 or not p2:
-                    continue
+                if not away_price or not home_price:
+                    away_price = h2h_outcomes[0].get("price")
+                    home_price = h2h_outcomes[1].get("price")
 
-                if p1 < p2:
-                    dec_price = p1
-                    fav_team = name1
+                away_ml = to_american_odds(away_price)
+                home_ml = to_american_odds(home_price)
+
+                if away_price < home_price:
+                    fav_team = away_team
+                    lead_ml_val = int(away_ml)
                 else:
-                    dec_price = p2
-                    fav_team = name2
-
-                if dec_price >= 2.0:
-                    lead_ml = int((dec_price - 1.0) * 100)
-                else:
-                    lead_ml = int(-100 / (dec_price - 1.0))
+                    fav_team = home_team
+                    lead_ml_val = int(home_ml)
 
                 matches.append({
                     "sport": group_label,
                     "gameDate": commence_time,
                     "awayTeam": away_team,
                     "homeTeam": home_team,
+                    "awayOdds": away_ml,
+                    "homeOdds": home_ml,
                     "favTeam": fav_team,
-                    "leadML": lead_ml,
+                    "leadML": lead_ml_val,
                     "gap": max(gap, 14)
                 })
         except Exception:
@@ -153,7 +165,6 @@ def fetch_odds():
         print("Error: ODDS_API_KEY secret is missing.")
         return all_data
 
-    # Query active sports directly to pick up live in-season tennis & soccer keys
     sports_url = f"https://api.the-odds-api.com/v4/sports?apiKey={API_KEY}"
     try:
         res = requests.get(sports_url, timeout=10)
@@ -168,12 +179,10 @@ def fetch_odds():
     except Exception:
         pass
 
-    # Reserve up to 3 slots for each sport so tennis & soccer always display
     for group, keys in SPORT_GROUPS.items():
         group_items = fetch_group_matches(group, keys, limit=3)
         all_data.extend(group_items)
 
-    # Sort final combined list by start time
     all_data.sort(key=lambda x: x["gameDate"])
     return all_data[:15]
 
@@ -182,3 +191,4 @@ if __name__ == "__main__":
     with open("odds_data.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Successfully updated odds_data.json with {len(data)} events across all sports.")
+    

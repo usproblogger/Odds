@@ -8,12 +8,18 @@ REGION = "us"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
 
+SPORTS = [
+    "americanfootball_nfl",
+    "basketball_nba",
+    "icehockey_nhl",
+    "soccer_epl",
+    "tennis_atp_challenger"
+]
+
 NAME_BUZZ = {
-    # Tennis Stars
     "djokovic": 95, "alcaraz": 96, "sinner": 94, "medvedev": 90, 
     "zverev": 88, "tsitsipas": 85, "rublev": 83, "rune": 84,
     "swiatek": 95, "sabalenka": 93, "gauff": 94, "rybakina": 90,
-    # Teams
     "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
     "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
     "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
@@ -45,25 +51,23 @@ def fetch_odds():
         print("Error: ODDS_API_KEY secret is missing.")
         return all_data
 
-    # Step 1: Dynamically fetch all currently active sports from the API
     sports_url = f"https://api.the-odds-api.com/v4/sports?apiKey={API_KEY}"
+    active_sports = []
     try:
         res = requests.get(sports_url, timeout=10)
-        if res.status_code != 200:
-            print("Failed to fetch sports list.")
-            return all_data
-        sports_list = res.json()
-        active_sport_keys = [s["key"] for s in sports_list if s.get("active")]
+        if res.status_code == 200:
+            for s in res.json():
+                if s.get("active") and not s.get("has_outrights"):
+                    key = s.get("key", "")
+                    if any(target in key for target in ["tennis", "nfl", "nba", "nhl", "soccer"]):
+                        active_sports.append(key)
     except Exception as e:
-        print(f"Error fetching sports list: {e}")
-        return active_sport_keys = ["americanfootball_nfl", "basketball_nba", "icehockey_nhl", "soccer_epl"]
+        print(f"Error querying sports list: {e}")
 
-    # Step 2: Query odds for active sports
-    for sport in active_sport_keys:
-        # Prioritize major sports and tennis
-        if not any(k in sport for k in ["nfl", "nba", "nhl", "soccer", "tennis"]):
-            continue
+    if not active_sports:
+        active_sports = SPORTS
 
+    for sport in active_sports:
         url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={API_KEY}&regions={REGION}&markets={MARKETS}&oddsFormat={ODDS_FORMAT}"
         try:
             response = requests.get(url, timeout=10)
@@ -79,10 +83,10 @@ def fetch_odds():
                 if not commence_time or not is_within_7_days(commence_time):
                     continue
                     
-                home_competitor = event.get("home_team")
-                away_competitor = event.get("away_team")
+                home_team = event.get("home_team")
+                away_team = event.get("away_team")
                 
-                if not home_competitor or not away_competitor:
+                if not home_team or not away_team:
                     continue
                 
                 if "tennis" in sport:
@@ -101,8 +105,8 @@ def fetch_odds():
                     sport_cat = "soccer"
                     icon = "⚽"
                 
-                home_buzz = get_buzz(home_competitor)
-                away_buzz = get_buzz(away_competitor)
+                home_buzz = get_buzz(home_team)
+                away_buzz = get_buzz(away_team)
                 gap = abs(home_buzz - away_buzz)
                 
                 bookmakers = event.get("bookmakers", [])
@@ -123,35 +127,43 @@ def fetch_odds():
                     
                 p1 = h2h_outcomes[0].get("price")
                 p2 = h2h_outcomes[1].get("price")
+                name1 = h2h_outcomes[0].get("name")
+                name2 = h2h_outcomes[1].get("name")
                 
                 if not p1 or not p2:
                     continue
-                    
+                
+                # Determine favorite based on lower decimal price
                 if p1 < p2:
                     dec_price = p1
+                    fav_team = name1
                 else:
                     dec_price = p2
+                    fav_team = name2
                     
                 if dec_price >= 2.0:
                     lead_ml = int((dec_price - 1.0) * 100)
                 else:
                     lead_ml = int(-100 / (dec_price - 1.0))
                 
-                match_fmt = f"{icon} {away_competitor} vs <strong>{home_competitor}</strong>"
+                # Bold the genuine favorite team
+                if fav_team == away_team:
+                    match_fmt = f"{icon} <strong>{away_team}</strong> vs {home_team}"
+                else:
+                    match_fmt = f"{icon} {away_team} vs <strong>{home_team}</strong>"
                 
                 all_data.append({
                     "isSpread": False,
-                    "timeframe": "this_weekend",
                     "sport": sport_cat,
                     "gameDate": commence_time,
                     "matchFormatted": match_fmt,
+                    "favorite": fav_team,
                     "leadML": lead_ml,
                     "gap": max(gap, 14)
                 })
         except Exception:
             continue
 
-    # Limit to top 12 matches to prevent UI clutter
     return all_data[:12]
 
 if __name__ == "__main__":

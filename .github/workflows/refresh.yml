@@ -1,39 +1,130 @@
-name: Twice Daily Odds Refresh
+import os
+import requests
+import json
+from datetime import datetime, timezone
 
-on:
-  schedule:
-    - cron: '0 15,23 * * *'
-  workflow_dispatch:
+API_KEY = os.environ.get("ODDS_API_KEY")
+REGION = "us"
+MARKETS = "h2h"
+ODDS_FORMAT = "decimal"
 
-permissions:
-  contents: write
+SPORTS = [
+    "americanfootball_nfl",
+    "basketball_nba",
+    "icehockey_nhl",
+    "soccer_uefa_champions_league"
+]
 
-jobs:
-  refresh-data:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repo
-        uses: actions/checkout@v3
+TEAM_BUZZ = {
+    "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
+    "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
+    "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
+    "real madrid": 96, "barcelona": 95, "arsenal": 90, "bayern": 92,
+    "maple leafs": 89, "rangers": 88, "oilers": 87, "blackhawks": 86,
+    "commanders": 78, "giants": 79, "panthers": 76, "saints": 81,
+    "texans": 82, "browns": 80, "vikings": 83, "falcons": 79, "hawks": 80
+}
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
+def get_buzz(team_name):
+    name_lower = team_name.lower()
+    for key, val in TEAM_BUZZ.items():
+        if key in name_lower:
+            return val
+    return 75
 
-      - name: Install dependencies
-        run: pip install requests
+def classify_timeframe(date_str):
+    try:
+        game_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        now = datetime.now(timezone.utc)
+        delta_days = (game_dt - now).days
+        if 0 <= delta_days <= 7:
+            return "this_weekend"
+        else:
+            return "next_weekend"
+    except Exception:
+        return "this_weekend"
 
-      - name: Run Odds Pipeline
-        env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
-        run: python update_odds.py
+def fetch_odds():
+    all_data = []
+    if not API_KEY:
+        print("Error: ODDS_API_KEY secret is missing.")
+        return all_data
 
-      - name: Commit and push updated JSON
-        run: |
-          git config --global user.name "OddsBot"
-          git config --global user.email "bot@users.noreply.github.com"
-          git add odds_data.json
-          git commit -m "Auto-update odds feed [skip ci]" || exit 0
-          git pull --rebase origin main
-          git push
-          
+    for sport in SPORTS:
+        url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={API_KEY}&regions={REGION}&markets={MARKETS}&oddsFormat={ODDS_FORMAT}"
+        response = requests.get(url)
+        
+        if response.status_code != 200:
+            print(f"Failed to fetch {sport}: {response.status_code}")
+            continue
+            
+        events = response.json()
+        for event in events:
+            commence_time = event.get("commence_time")
+            home_team = event.get("home_team")
+            away_team = event.get("away_team")
+            
+            timeframe = classify_timeframe(commence_time)
+            sport_cat = "football" if "football" in sport else ("basketball" if "basketball" in sport else ("hockey" if "hockey" in sport else "soccer"))
+            
+            home_buzz = get_buzz(home_team)
+            away_buzz = get_buzz(away_team)
+            gap = abs(home_buzz - away_buzz)
+            
+            bookmakers = event.get("bookmakers", [])
+            if not bookmakers:
+                continue
+            
+            # Find first bookmaker with valid h2h outcomes
+            h2h_outcomes = []
+            for bm in bookmakers:
+                for market in bm.get("markets", []):
+                    if market.get("key") == "h2h":
+                        h2h_outcomes = market.get("outcomes", [])
+                        break
+                if len(h2h_outcomes) >= 2:
+                    break
+            
+            if len(h2h_outcomes) < 2:
+                continue
+                
+            team1, team2 = h2h_outcomes[0], h2h_outcomes[1]
+            p1 = team1.get("price")
+            p2 = team2.get("price")
+            
+            if not p1 or not p2:
+                continue
+                
+            # Assign unique pricing for favorite
+            if p1 < p2:
+                fav_name = team1.get("name")
+                dec_price = p1
+            else:
+                fav_name = team2.get("name")
+                dec_price = p2
+                
+            if dec_price >= 2.0:
+                lead_ml = int((dec_price - 1.0) * 100)
+            else:
+                lead_ml = int(-100 / (dec_price - 1.0))
+            
+            match_fmt = f"{away_team} vs {home_team}"
+            
+            all_data.append({
+                "isSpread": False,
+                "timeframe": timeframe,
+                "sport": sport_cat,
+                "gameDate": commence_time,
+                "matchFormatted": match_fmt,
+                "leadML": lead_ml,
+                "gap": max(gap, 14) # Ensures vibrant, non-zero separation
+            })
+
+    return all_data
+
+if __name__ == "__main__":
+    data = fetch_odds()
+    with open("odds_data.json", "w") as f:
+        json.dump(data, f, indent=2)
+    print(f"Successfully updated odds_data.json with {len(data)} valid events.")
+    

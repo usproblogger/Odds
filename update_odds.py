@@ -8,20 +8,12 @@ REGION = "us"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
 
-# Robust list using general and currently active sport keys
-SPORTS = [
-    "tennis_atp_us_open",
-    "tennis_wta_us_open",
-    "americanfootball_nfl",
-    "basketball_nba",
-    "icehockey_nhl",
-    "soccer_uefa_champions_league"
-]
-
 NAME_BUZZ = {
+    # Tennis Stars
     "djokovic": 95, "alcaraz": 96, "sinner": 94, "medvedev": 90, 
     "zverev": 88, "tsitsipas": 85, "rublev": 83, "rune": 84,
     "swiatek": 95, "sabalenka": 93, "gauff": 94, "rybakina": 90,
+    # Teams
     "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
     "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
     "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
@@ -30,6 +22,8 @@ NAME_BUZZ = {
 }
 
 def get_buzz(name):
+    if not name:
+        return 75
     name_lower = name.lower()
     for key, val in NAME_BUZZ.items():
         if key in name_lower:
@@ -51,7 +45,25 @@ def fetch_odds():
         print("Error: ODDS_API_KEY secret is missing.")
         return all_data
 
-    for sport in SPORTS:
+    # Step 1: Dynamically fetch all currently active sports from the API
+    sports_url = f"https://api.the-odds-api.com/v4/sports?apiKey={API_KEY}"
+    try:
+        res = requests.get(sports_url, timeout=10)
+        if res.status_code != 200:
+            print("Failed to fetch sports list.")
+            return all_data
+        sports_list = res.json()
+        active_sport_keys = [s["key"] for s in sports_list if s.get("active")]
+    except Exception as e:
+        print(f"Error fetching sports list: {e}")
+        return active_sport_keys = ["americanfootball_nfl", "basketball_nba", "icehockey_nhl", "soccer_epl"]
+
+    # Step 2: Query odds for active sports
+    for sport in active_sport_keys:
+        # Prioritize major sports and tennis
+        if not any(k in sport for k in ["nfl", "nba", "nhl", "soccer", "tennis"]):
+            continue
+
         url = f"https://api.the-odds-api.com/v4/sports/{sport}/odds/?apiKey={API_KEY}&regions={REGION}&markets={MARKETS}&oddsFormat={ODDS_FORMAT}"
         try:
             response = requests.get(url, timeout=10)
@@ -136,11 +148,10 @@ def fetch_odds():
                     "leadML": lead_ml,
                     "gap": max(gap, 14)
                 })
-        except Exception as e:
-            print(f"Skipping {sport} due to error: {e}")
+        except Exception:
             continue
 
-    # Limit to top 12 matches to avoid UI clutter
+    # Limit to top 12 matches to prevent UI clutter
     return all_data[:12]
 
 if __name__ == "__main__":

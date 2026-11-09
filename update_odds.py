@@ -8,15 +8,27 @@ REGION = "us"
 MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
 
+# Comprehensive multi-sport list including Tennis, Football, Basketball, Hockey, and Soccer
 SPORTS = [
+    "tennis_atp_aus_open",
+    "tennis_wta_aus_open",
+    "tennis_atp_french_open",
+    "tennis_wta_french_open",
+    "tennis_atp_wimbledon",
+    "tennis_wta_wimbledon",
     "americanfootball_nfl",
     "basketball_nba",
     "icehockey_nhl",
     "soccer_uefa_champions_league"
 ]
 
-# Comprehensive brand popularity baseline map (0-100 scale)
-TEAM_BUZZ = {
+# Combined Player & Team Buzz baseline map (0-100 scale)
+NAME_BUZZ = {
+    # Tennis Stars
+    "djokovic": 95, "alcaraz": 96, "sinner": 94, "medvedev": 90, 
+    "zverev": 88, "tsitsipas": 85, "rublev": 83, "rune": 84,
+    "swiatek": 95, "sabalenka": 93, "gauff": 94, "rybakina": 90,
+    # Teams
     "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
     "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
     "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
@@ -24,26 +36,22 @@ TEAM_BUZZ = {
     "maple leafs": 89, "rangers": 88, "oilers": 87, "blackhawks": 86
 }
 
-def get_buzz(team_name):
-    name_lower = team_name.lower()
-    for key, val in TEAM_BUZZ.items():
+def get_buzz(name):
+    name_lower = name.lower()
+    for key, val in NAME_BUZZ.items():
         if key in name_lower:
             return val
-    return 75  # Clean default baseline instead of 0
+    return 75
 
-def classify_timeframe(date_str):
+def is_within_7_days(date_str):
+    """Returns True ONLY if the match falls within the next 7 days (cutting off anything further)."""
     try:
         game_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
         now = datetime.now(timezone.utc)
         delta_days = (game_dt - now).days
-        
-        # 0 to 7 days out falls into "this_weekend" / current week bucket
-        if 0 <= delta_days <= 7:
-            return "this_weekend"
-        else:
-            return "next_weekend"
+        return 0 <= delta_days <= 7
     except Exception:
-        return "this_weekend"
+        return False
 
 def fetch_odds():
     all_data = []
@@ -56,68 +64,89 @@ def fetch_odds():
         response = requests.get(url)
         
         if response.status_code != 200:
-            print(f"Failed to fetch {sport}: {response.status_code}")
             continue
             
         events = response.json()
         for event in events:
             commence_time = event.get("commence_time")
-            home_team = event.get("home_team")
-            away_team = event.get("away_team")
             
-            timeframe = classify_timeframe(commence_time)
+            # Strict cutoff: Drop anything further than 7 days away
+            if not is_within_7_days(commence_time):
+                continue
+                
+            home_competitor = event.get("home_team")
+            away_competitor = event.get("away_team")
             
-            sport_cat = "football" if "football" in sport else ("basketball" if "basketball" in sport else ("hockey" if "hockey" in sport else "soccer"))
+            # Determine sport icon and category label
+            if "tennis" in sport:
+                sport_cat = "tennis"
+                icon = "🎾"
+            elif "football" in sport:
+                sport_cat = "football"
+                icon = "🏈"
+            elif "basketball" in sport:
+                sport_cat = "basketball"
+                icon = "🏀"
+            elif "icehockey" in sport:
+                sport_cat = "hockey"
+                icon = "🏒"
+            else:
+                sport_cat = "soccer"
+                icon = "⚽"
             
-            home_buzz = get_buzz(home_team)
-            away_buzz = get_buzz(away_team)
+            home_buzz = get_buzz(home_competitor)
+            away_buzz = get_buzz(away_competitor)
             gap = abs(home_buzz - away_buzz)
             
             bookmakers = event.get("bookmakers", [])
             if not bookmakers:
                 continue
+            
+            h2h_outcomes = []
+            for bm in bookmakers:
+                for market in bm.get("markets", []):
+                    if market.get("key") == "h2h":
+                        h2h_outcomes = market.get("outcomes", [])
+                        break
+                if len(h2h_outcomes) >= 2:
+                    break
+            
+            if len(h2h_outcomes) < 2:
+                continue
                 
-            markets = bookmakers[0].get("markets", [])
-            for market in markets:
-                if market.get("key") == "h2h":
-                    outcomes = market.get("outcomes", [])
-                    if len(outcomes) == 2:
-                        team1, team2 = outcomes[0], outcomes[1]
-                        
-                        # Identify favorite based on lower odds price
-                        price1 = team1.get("price", 2.0)
-                        price2 = team2.get("price", 2.0)
-                        
-                        if price1 < price2:
-                            fav_name = team1.get("name")
-                            dec_price = price1
-                        else:
-                            fav_name = team2.get("name")
-                            dec_price = price2
-                            
-                        # Convert decimal odds to American moneyline format for the widget math
-                        if dec_price >= 2.0:
-                            lead_ml = int((dec_price - 1.0) * 100)
-                        else:
-                            lead_ml = int(-100 / (dec_price - 1.0))
-                            
-                        match_fmt = f"{away_team} vs {home_team}"
-                        
-                        all_data.append({
-                            "isSpread": False,
-                            "timeframe": timeframe,
-                            "sport": sport_cat,
-                            "gameDate": commence_time,
-                            "matchFormatted": match_fmt,
-                            "leadML": lead_ml,
-                            "gap": max(gap, 15) # Ensures a healthy visible gap
-                        })
+            p1 = h2h_outcomes[0].get("price")
+            p2 = h2h_outcomes[1].get("price")
+            
+            if not p1 or not p2:
+                continue
+                
+            if p1 < p2:
+                dec_price = p1
+            else:
+                dec_price = p2
+                
+            if dec_price >= 2.0:
+                lead_ml = int((dec_price - 1.0) * 100)
+            else:
+                lead_ml = int(-100 / (dec_price - 1.0))
+            
+            match_fmt = f"{icon} {away_competitor} vs <strong>{home_competitor}</strong>"
+            
+            all_data.append({
+                "isSpread": False,
+                "timeframe": "this_weekend",
+                "sport": sport_cat,
+                "gameDate": commence_time,
+                "matchFormatted": match_fmt,
+                "leadML": lead_ml,
+                "gap": max(gap, 14)
+            })
 
-    return all_data
+    # Limit to top 12 most relevant upcoming matches to avoid visual clutter
+    return all_data[:12]
 
 if __name__ == "__main__":
     data = fetch_odds()
     with open("odds_data.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Successfully updated odds_data.json with {len(data)} events.")
-    

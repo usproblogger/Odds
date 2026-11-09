@@ -4,8 +4,10 @@
     "gameDate": "2026-11-10T00:10:00Z",
     "awayTeam": "Los Angeles Lakers",
     "homeTeam": "Atlanta Hawks",
+    "awayOdds": "+116",
+    "homeOdds": "-135",
     "favTeam": "Atlanta Hawks",
-    "leadML": -133,
+    "leadML": -135,
     "gap": 19
   },
   {
@@ -13,8 +15,10 @@
     "gameDate": "2026-11-10T00:10:00Z",
     "awayTeam": "Cleveland Cavaliers",
     "homeTeam": "Charlotte Hornets",
+    "awayOdds": "-345",
+    "homeOdds": "+280",
     "favTeam": "Cleveland Cavaliers",
-    "leadML": -357,
+    "leadML": -345,
     "gap": 14
   },
   {
@@ -22,8 +26,10 @@
     "gameDate": "2026-11-10T00:10:00Z",
     "awayTeam": "Washington Wizards",
     "homeTeam": "Detroit Pistons",
+    "awayOdds": "+320",
+    "homeOdds": "-400",
     "favTeam": "Detroit Pistons",
-    "leadML": -500,
+    "leadML": -400,
     "gap": 14
   },
   {
@@ -31,8 +37,10 @@
     "gameDate": "2026-11-10T01:10:00Z",
     "awayTeam": "New York Rangers",
     "homeTeam": "Edmonton Oilers",
+    "awayOdds": "+136",
+    "homeOdds": "-164",
     "favTeam": "Edmonton Oilers",
-    "leadML": -161,
+    "leadML": -164,
     "gap": 14
   },
   {
@@ -40,8 +48,10 @@
     "gameDate": "2026-11-10T01:15:00Z",
     "awayTeam": "Buffalo Bills",
     "homeTeam": "Minnesota Vikings",
+    "awayOdds": "-196",
+    "homeOdds": "+164",
     "favTeam": "Buffalo Bills",
-    "leadML": -192,
+    "leadML": -196,
     "gap": 15
   },
   {
@@ -49,8 +59,10 @@
     "gameDate": "2026-11-10T02:40:00Z",
     "awayTeam": "Philadelphia Flyers",
     "homeTeam": "Vancouver Canucks",
+    "awayOdds": "-137",
+    "homeOdds": "+114",
     "favTeam": "Philadelphia Flyers",
-    "leadML": -136,
+    "leadML": -137,
     "gap": 14
   },
   {
@@ -58,8 +70,10 @@
     "gameDate": "2026-11-10T03:10:00Z",
     "awayTeam": "New York Islanders",
     "homeTeam": "San Jose Sharks",
+    "awayOdds": "-141",
+    "homeOdds": "+116",
     "favTeam": "New York Islanders",
-    "leadML": -142,
+    "leadML": -141,
     "gap": 14
   },
   {
@@ -67,6 +81,8 @@
     "gameDate": "2026-11-10T17:45:00Z",
     "awayTeam": "Chelsea",
     "homeTeam": "BK Hacken",
+    "awayOdds": "-476",
+    "homeOdds": "+875",
     "favTeam": "Chelsea",
     "leadML": -476,
     "gap": 14
@@ -76,6 +92,8 @@
     "gameDate": "2026-11-10T17:45:00Z",
     "awayTeam": "Paris FC",
     "homeTeam": "Real Madrid",
+    "awayOdds": "+475",
+    "homeOdds": "-263",
     "favTeam": "Real Madrid",
     "leadML": -263,
     "gap": 21
@@ -85,6 +103,8 @@
     "gameDate": "2026-11-10T20:00:00Z",
     "awayTeam": "Servette FC",
     "homeTeam": "AS Roma",
+    "awayOdds": "+800",
+    "homeOdds": "-476",
     "favTeam": "AS Roma",
     "leadML": -476,
     "gap": 14
@@ -94,8 +114,10 @@
     "gameDate": "2026-11-13T01:15:00Z",
     "awayTeam": "Washington Commanders",
     "homeTeam": "New York Giants",
+    "awayOdds": "+110",
+    "homeOdds": "-130",
     "favTeam": "New York Giants",
-    "leadML": -125,
+    "leadML": -130,
     "gap": 14
   },
   {
@@ -103,8 +125,10 @@
     "gameDate": "2026-11-15T14:30:00Z",
     "awayTeam": "New England Patriots",
     "homeTeam": "Detroit Lions",
+    "awayOdds": "+130",
+    "homeOdds": "-154",
     "favTeam": "Detroit Lions",
-    "leadML": -147,
+    "leadML": -154,
     "gap": 14
   }
 ]

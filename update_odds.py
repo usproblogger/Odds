@@ -120,4 +120,4 @@ if __name__ == "__main__":
     with open("odds_data.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Successfully updated odds_data.json with {len(data)} events.")
-                            
+    

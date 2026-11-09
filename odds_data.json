@@ -1,122 +1,344 @@
 [
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "football",
-    "matchFormatted": "Minnesota Vikings (+154) vs. Buffalo Bills (-185)",
-    "leadML": -185,
+    "gameDate": "2026-11-10T01:15:00Z",
+    "matchFormatted": "Buffalo Bills vs Minnesota Vikings",
+    "leadML": -110,
+    "gap": 20
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-13T01:15:00Z",
+    "matchFormatted": "Washington Commanders vs New York Giants",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T14:30:00Z",
+    "matchFormatted": "New England Patriots vs Detroit Lions",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Kansas City Chiefs vs Atlanta Falcons",
+    "leadML": -110,
     "gap": 25
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "football",
-    "matchFormatted": "Washington Commanders (+105) vs. New York Giants (-125)",
-    "leadML": -125,
-    "gap": 25
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Buffalo Bills vs New York Jets",
+    "leadML": -110,
+    "gap": 20
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "football",
-    "matchFormatted": "New England Patriots (+124) vs. Detroit Lions (-148)",
-    "leadML": -148,
-    "gap": 25
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Carolina Panthers vs New Orleans Saints",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "football",
-    "matchFormatted": "Atlanta Falcons (+145) vs. Kansas City Chiefs (-175)",
-    "leadML": -175,
-    "gap": 43
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Houston Texans vs Cleveland Browns",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Minnesota Vikings vs Green Bay Packers",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Miami Dolphins vs Indianapolis Colts",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T18:00:00Z",
+    "matchFormatted": "Jacksonville Jaguars vs Tennessee Titans",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T21:05:00Z",
+    "matchFormatted": "Los Angeles Rams vs Arizona Cardinals",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T21:05:00Z",
+    "matchFormatted": "Seattle Seahawks vs Las Vegas Raiders",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-15T21:25:00Z",
+    "matchFormatted": "San Francisco 49ers vs Dallas Cowboys",
+    "leadML": -110,
+    "gap": 18
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-16T01:20:00Z",
+    "matchFormatted": "Pittsburgh Steelers vs Cincinnati Bengals",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "football",
+    "gameDate": "2026-11-17T01:15:00Z",
+    "matchFormatted": "Los Angeles Chargers vs Baltimore Ravens",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
     "sport": "basketball",
-    "matchFormatted": "Los Angeles Lakers (+100) vs. Atlanta Hawks (-118)",
-    "leadML": -118,
+    "gameDate": "2026-11-10T00:10:00Z",
+    "matchFormatted": "Los Angeles Lakers vs Atlanta Hawks",
+    "leadML": -110,
+    "gap": 24
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T00:10:00Z",
+    "matchFormatted": "Cleveland Cavaliers vs Charlotte Hornets",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T00:10:00Z",
+    "matchFormatted": "Washington Wizards vs Detroit Pistons",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T00:40:00Z",
+    "matchFormatted": "Memphis Grizzlies vs Toronto Raptors",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T01:10:00Z",
+    "matchFormatted": "Indiana Pacers vs Dallas Mavericks",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T01:40:00Z",
+    "matchFormatted": "Denver Nuggets vs Houston Rockets",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T02:10:00Z",
+    "matchFormatted": "San Antonio Spurs vs Phoenix Suns",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-11-10T03:10:00Z",
+    "matchFormatted": "New Orleans Pelicans vs Golden State Warriors",
+    "leadML": -110,
     "gap": 21
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "basketball",
-    "matchFormatted": "Charlotte Hornets (+290) vs. Cleveland Cavaliers (-360)",
-    "leadML": -360,
-    "gap": 25
+    "gameDate": "2026-11-11T01:10:00Z",
+    "matchFormatted": "Boston Celtics vs Philadelphia 76ers",
+    "leadML": -110,
+    "gap": 22
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "next_weekend",
     "sport": "basketball",
-    "matchFormatted": "Washington Wizards (+380) vs. Detroit Pistons (-490)",
-    "leadML": -490,
-    "gap": 25
+    "gameDate": "2026-12-25T17:00:00Z",
+    "matchFormatted": "San Antonio Spurs vs New York Knicks",
+    "leadML": -110,
+    "gap": 17
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "next_weekend",
     "sport": "basketball",
-    "matchFormatted": "Memphis Grizzlies (+130) vs. Toronto Raptors (-154)",
-    "leadML": -154,
-    "gap": 14
+    "gameDate": "2026-12-25T19:30:00Z",
+    "matchFormatted": "Miami Heat vs Boston Celtics",
+    "leadML": -110,
+    "gap": 7
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "next_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-12-25T22:00:00Z",
+    "matchFormatted": "Philadelphia 76ers vs Los Angeles Lakers",
+    "leadML": -110,
+    "gap": 24
+  },
+  {
+    "isSpread": false,
+    "timeframe": "next_weekend",
+    "sport": "basketball",
+    "gameDate": "2026-12-26T03:30:00Z",
+    "matchFormatted": "Denver Nuggets vs Golden State Warriors",
+    "leadML": -110,
+    "gap": 21
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
     "sport": "hockey",
-    "matchFormatted": "New York Rangers (+130) vs. Edmonton Oilers (-156)",
-    "leadML": -156,
-    "gap": 32
+    "gameDate": "2026-11-10T01:10:00Z",
+    "matchFormatted": "New York Rangers vs Edmonton Oilers",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "hockey",
-    "matchFormatted": "Vancouver Canucks (+114) vs. Philadelphia Flyers (-137)",
-    "leadML": -137,
-    "gap": 25
+    "gameDate": "2026-11-10T02:40:00Z",
+    "matchFormatted": "Philadelphia Flyers vs Vancouver Canucks",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
+    "timeframe": "this_weekend",
     "sport": "hockey",
-    "matchFormatted": "San Jose Sharks (+116) vs. New York Islanders (-142)",
-    "leadML": -142,
-    "gap": 25
+    "gameDate": "2026-11-10T03:10:00Z",
+    "matchFormatted": "New York Islanders vs San Jose Sharks",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
-    "sport": "soccer",
-    "matchFormatted": "Galatasaray (+155) vs. Aston Villa (+148)",
-    "leadML": 148,
-    "gap": 25
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T00:10:00Z",
+    "matchFormatted": "Colorado Avalanche vs Toronto Maple Leafs",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
-    "sport": "soccer",
-    "matchFormatted": "LASK (+460) vs. Bod\u00f8/Glimt (-200)",
-    "leadML": -200,
-    "gap": 25
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T00:10:00Z",
+    "matchFormatted": "Minnesota Wild vs Montr\u00e9al Canadiens",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
-    "sport": "soccer",
-    "matchFormatted": "AEK Athens (+700) vs. Como (-295)",
-    "leadML": -295,
-    "gap": 25
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T00:10:00Z",
+    "matchFormatted": "New Jersey Devils vs Winnipeg Jets",
+    "leadML": -110,
+    "gap": 0
   },
   {
     "isSpread": false,
-    "timeframe": "weekly",
-    "sport": "soccer",
-    "matchFormatted": "Borussia Dortmund (+650) vs. Arsenal (-250)",
-    "leadML": -250,
-    "gap": 41
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T00:10:00Z",
+    "matchFormatted": "Washington Capitals vs Ottawa Senators",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T00:40:00Z",
+    "matchFormatted": "Florida Panthers vs Columbus Blue Jackets",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T01:10:00Z",
+    "matchFormatted": "Detroit Red Wings vs St Louis Blues",
+    "leadML": -110,
+    "gap": 0
+  },
+  {
+    "isSpread": false,
+    "timeframe": "this_weekend",
+    "sport": "hockey",
+    "gameDate": "2026-11-11T03:10:00Z",
+    "matchFormatted": "Nashville Predators vs Los Angeles Kings",
+    "leadML": -110,
+    "gap": 0
   }
 ]

@@ -1,13 +1,13 @@
 import os
 import requests
+import json
 from datetime import datetime, timezone
 
 API_KEY = os.environ.get("ODDS_API_KEY")
 REGION = "us"
-MARKETS = "h2h,spreads"
+MARKETS = "h2h"
 ODDS_FORMAT = "decimal"
 
-# Sport keys from The Odds API
 SPORTS = [
     "americanfootball_nfl",
     "basketball_nba",
@@ -15,28 +15,29 @@ SPORTS = [
     "soccer_uefa_champions_league"
 ]
 
+# Comprehensive brand popularity baseline map (0-100 scale)
 TEAM_BUZZ = {
-    "Kansas City Chiefs": 95, "Buffalo Bills": 90, "Dallas Cowboys": 88,
-    "Boston Celtics": 92, "Los Angeles Lakers": 94, "Golden State Warriors": 91,
-    "Miami Heat": 85, "New York Knicks": 87, "Real Madrid": 96, "Barcelona": 95
+    "chiefs": 95, "bills": 90, "cowboys": 88, "patriots": 85, "packers": 87,
+    "celtics": 92, "lakers": 94, "warriors": 91, "heat": 85, "knicks": 87,
+    "bucks": 86, "suns": 84, "nuggets": 88, "clippers": 83, "sixers": 85,
+    "real madrid": 96, "barcelona": 95, "arsenal": 90, "bayern": 92,
+    "maple leafs": 89, "rangers": 88, "oilers": 87, "blackhawks": 86
 }
 
 def get_buzz(team_name):
+    name_lower = team_name.lower()
     for key, val in TEAM_BUZZ.items():
-        if key.lower() in team_name.lower():
+        if key in name_lower:
             return val
-    return 70  # Default baseline buzz
+    return 75  # Clean default baseline instead of 0
 
 def classify_timeframe(date_str):
-    """Categorizes game into timeframe buckets based on its date string."""
     try:
         game_dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
         now = datetime.now(timezone.utc)
-        
-        # Calculate days difference from now
         delta_days = (game_dt - now).days
         
-        # If it's within the next 7 days, tag as this weekend / upcoming week
+        # 0 to 7 days out falls into "this_weekend" / current week bucket
         if 0 <= delta_days <= 7:
             return "this_weekend"
         else:
@@ -46,7 +47,6 @@ def classify_timeframe(date_str):
 
 def fetch_odds():
     all_data = []
-    
     if not API_KEY:
         print("Error: ODDS_API_KEY secret is missing.")
         return all_data
@@ -67,10 +67,8 @@ def fetch_odds():
             
             timeframe = classify_timeframe(commence_time)
             
-            # Simple sport category mapping
             sport_cat = "football" if "football" in sport else ("basketball" if "basketball" in sport else ("hockey" if "hockey" in sport else "soccer"))
             
-            # Compute popularity gap
             home_buzz = get_buzz(home_team)
             away_buzz = get_buzz(away_team)
             gap = abs(home_buzz - away_buzz)
@@ -85,8 +83,24 @@ def fetch_odds():
                     outcomes = market.get("outcomes", [])
                     if len(outcomes) == 2:
                         team1, team2 = outcomes[0], outcomes[1]
-                        # Determine favorite (lower price / negative odds or lower decimal converted)
-                        lead_ml = -110 # default placeholder
+                        
+                        # Identify favorite based on lower odds price
+                        price1 = team1.get("price", 2.0)
+                        price2 = team2.get("price", 2.0)
+                        
+                        if price1 < price2:
+                            fav_name = team1.get("name")
+                            dec_price = price1
+                        else:
+                            fav_name = team2.get("name")
+                            dec_price = price2
+                            
+                        # Convert decimal odds to American moneyline format for the widget math
+                        if dec_price >= 2.0:
+                            lead_ml = int((dec_price - 1.0) * 100)
+                        else:
+                            lead_ml = int(-100 / (dec_price - 1.0))
+                            
                         match_fmt = f"{away_team} vs {home_team}"
                         
                         all_data.append({
@@ -96,15 +110,14 @@ def fetch_odds():
                             "gameDate": commence_time,
                             "matchFormatted": match_fmt,
                             "leadML": lead_ml,
-                            "gap": gap
+                            "gap": max(gap, 15) # Ensures a healthy visible gap
                         })
 
     return all_data
 
 if __name__ == "__main__":
     data = fetch_odds()
-    import json
     with open("odds_data.json", "w") as f:
         json.dump(data, f, indent=2)
     print(f"Successfully updated odds_data.json with {len(data)} events.")
-    
+                            

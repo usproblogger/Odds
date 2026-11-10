@@ -1,68 +1,13 @@
 [
   {
-    "sport": "soccer",
-    "gameDate": "2026-11-10T17:45:00Z",
-    "awayTeam": "Chelsea",
-    "homeTeam": "BK Hacken",
-    "awayOdds": "-625",
-    "homeOdds": "+1050",
-    "favTeam": "Chelsea",
-    "leadML": -625,
-    "gap": 14
-  },
-  {
-    "sport": "soccer",
-    "gameDate": "2026-11-10T17:45:00Z",
-    "awayTeam": "Paris FC",
-    "homeTeam": "Real Madrid",
-    "awayOdds": "+460",
-    "homeOdds": "-263",
-    "favTeam": "Real Madrid",
-    "leadML": -263,
-    "gap": 21
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-10T20:00:00Z",
-    "awayTeam": "Jessica Pegula",
-    "homeTeam": "Marta Kostyuk",
-    "awayOdds": "-185",
-    "homeOdds": "+156",
-    "favTeam": "Jessica Pegula",
-    "leadML": -185,
-    "gap": 14
-  },
-  {
-    "sport": "soccer",
-    "gameDate": "2026-11-10T20:00:00Z",
-    "awayTeam": "Servette FC",
-    "homeTeam": "AS Roma",
-    "awayOdds": "+850",
-    "homeOdds": "-526",
-    "favTeam": "AS Roma",
-    "leadML": -526,
-    "gap": 14
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-10T21:10:00Z",
-    "awayTeam": "Linda Noskova",
-    "homeTeam": "Coco Gauff",
-    "awayOdds": "+144",
-    "homeOdds": "-169",
-    "favTeam": "Coco Gauff",
-    "leadML": -169,
-    "gap": 19
-  },
-  {
     "sport": "hockey",
     "gameDate": "2026-11-11T00:10:00Z",
     "awayTeam": "Colorado Avalanche",
     "homeTeam": "Toronto Maple Leafs",
-    "awayOdds": "-161",
-    "homeOdds": "+136",
+    "awayOdds": "-175",
+    "homeOdds": "+145",
     "favTeam": "Colorado Avalanche",
-    "leadML": -161,
+    "leadML": -175,
     "gap": 14
   },
   {
@@ -81,10 +26,10 @@
     "gameDate": "2026-11-11T00:10:00Z",
     "awayTeam": "New Jersey Devils",
     "homeTeam": "Winnipeg Jets",
-    "awayOdds": "-154",
-    "homeOdds": "+130",
+    "awayOdds": "-143",
+    "homeOdds": "+120",
     "favTeam": "New Jersey Devils",
-    "leadML": -154,
+    "leadML": -143,
     "gap": 14
   },
   {
@@ -92,10 +37,10 @@
     "gameDate": "2026-11-11T00:40:00Z",
     "awayTeam": "Milwaukee Bucks",
     "homeTeam": "New York Knicks",
-    "awayOdds": "+810",
-    "homeOdds": "-1429",
+    "awayOdds": "+750",
+    "homeOdds": "-1250",
     "favTeam": "New York Knicks",
-    "leadML": -1429,
+    "leadML": -1250,
     "gap": 14
   },
   {
@@ -114,10 +59,21 @@
     "gameDate": "2026-11-11T02:10:00Z",
     "awayTeam": "Los Angeles Clippers",
     "homeTeam": "Phoenix Suns",
-    "awayOdds": "+138",
-    "homeOdds": "-164",
+    "awayOdds": "+140",
+    "homeOdds": "-167",
     "favTeam": "Phoenix Suns",
-    "leadML": -164,
+    "leadML": -167,
+    "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-11T17:45:00Z",
+    "awayTeam": "HB K\u00f8ge",
+    "homeTeam": "Leuven",
+    "awayOdds": "-161",
+    "homeOdds": "+340",
+    "favTeam": "HB K\u00f8ge",
+    "leadML": -161,
     "gap": 14
   },
   {
@@ -125,21 +81,54 @@
     "gameDate": "2026-11-11T20:00:00Z",
     "awayTeam": "Karolina Muchova",
     "homeTeam": "Elina Svitolina",
-    "awayOdds": "-161",
-    "homeOdds": "+140",
+    "awayOdds": "-145",
+    "homeOdds": "+124",
     "favTeam": "Karolina Muchova",
-    "leadML": -161,
+    "leadML": -145,
     "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-11T20:00:00Z",
+    "awayTeam": "Austria Wien",
+    "homeTeam": "Benfica",
+    "awayOdds": "+450",
+    "homeOdds": "-135",
+    "favTeam": "Benfica",
+    "leadML": -135,
+    "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-11T20:00:00Z",
+    "awayTeam": "Lyon",
+    "homeTeam": "Juventus",
+    "awayOdds": "-1429",
+    "homeOdds": "+1500",
+    "favTeam": "Lyon",
+    "leadML": -1429,
+    "gap": 14
+  },
+  {
+    "sport": "tennis",
+    "gameDate": "2026-11-11T21:10:00Z",
+    "awayTeam": "Mirra Andreeva",
+    "homeTeam": "Aryna Sabalenka",
+    "awayOdds": "-110",
+    "homeOdds": "-110",
+    "favTeam": "Aryna Sabalenka",
+    "leadML": -110,
+    "gap": 18
   },
   {
     "sport": "football",
     "gameDate": "2026-11-13T01:15:00Z",
     "awayTeam": "Washington Commanders",
     "homeTeam": "New York Giants",
-    "awayOdds": "+110",
-    "homeOdds": "-130",
+    "awayOdds": "+114",
+    "homeOdds": "-135",
     "favTeam": "New York Giants",
-    "leadML": -130,
+    "leadML": -135,
     "gap": 14
   },
   {

@@ -1,68 +1,13 @@
 [
   {
     "sport": "hockey",
-    "gameDate": "2026-11-12T17:00:00Z",
-    "awayTeam": "Carolina Hurricanes",
-    "homeTeam": "Seattle Kraken",
-    "awayOdds": "-312",
-    "homeOdds": "+250",
-    "favTeam": "Carolina Hurricanes",
-    "leadML": -312,
-    "gap": 14
-  },
-  {
-    "sport": "soccer",
-    "gameDate": "2026-11-12T17:45:00Z",
-    "awayTeam": "Arsenal",
-    "homeTeam": "Barcelona",
-    "awayOdds": "+800",
-    "homeOdds": "-526",
-    "favTeam": "Barcelona",
-    "leadML": -526,
-    "gap": 14
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-12T20:00:00Z",
-    "awayTeam": "Coco Gauff",
-    "homeTeam": "Marta Kostyuk",
-    "awayOdds": "-294",
-    "homeOdds": "+235",
-    "favTeam": "Coco Gauff",
-    "leadML": -294,
-    "gap": 19
-  },
-  {
-    "sport": "soccer",
-    "gameDate": "2026-11-12T20:00:00Z",
-    "awayTeam": "Austria Wien",
-    "homeTeam": "Benfica",
-    "awayOdds": "+500",
-    "homeOdds": "-227",
-    "favTeam": "Benfica",
-    "leadML": -227,
-    "gap": 14
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-12T21:30:00Z",
-    "awayTeam": "Linda Noskova",
-    "homeTeam": "Jessica Pegula",
-    "awayOdds": "-120",
-    "homeOdds": "-101",
-    "favTeam": "Linda Noskova",
-    "leadML": -120,
-    "gap": 14
-  },
-  {
-    "sport": "hockey",
     "gameDate": "2026-11-13T00:08:00Z",
     "awayTeam": "Colorado Avalanche",
     "homeTeam": "Ottawa Senators",
-    "awayOdds": "-120",
-    "homeOdds": "+100",
-    "favTeam": "Colorado Avalanche",
-    "leadML": -120,
+    "awayOdds": "-102",
+    "homeOdds": "-118",
+    "favTeam": "Ottawa Senators",
+    "leadML": -118,
     "gap": 14
   },
   {
@@ -92,10 +37,21 @@
     "gameDate": "2026-11-13T00:10:00Z",
     "awayTeam": "Toronto Raptors",
     "homeTeam": "Philadelphia 76ers",
-    "awayOdds": "+275",
-    "homeOdds": "-345",
+    "awayOdds": "+265",
+    "homeOdds": "-333",
     "favTeam": "Philadelphia 76ers",
-    "leadML": -345,
+    "leadML": -333,
+    "gap": 14
+  },
+  {
+    "sport": "hockey",
+    "gameDate": "2026-11-13T00:10:00Z",
+    "awayTeam": "Montr\u00e9al Canadiens",
+    "homeTeam": "Boston Bruins",
+    "awayOdds": "+102",
+    "homeOdds": "-122",
+    "favTeam": "Boston Bruins",
+    "leadML": -122,
     "gap": 14
   },
   {
@@ -114,10 +70,10 @@
     "gameDate": "2026-11-13T01:15:00Z",
     "awayTeam": "Washington Commanders",
     "homeTeam": "New York Giants",
-    "awayOdds": "+114",
-    "homeOdds": "-135",
+    "awayOdds": "+105",
+    "homeOdds": "-125",
     "favTeam": "New York Giants",
-    "leadML": -135,
+    "leadML": -125,
     "gap": 14
   },
   {
@@ -125,10 +81,10 @@
     "gameDate": "2026-11-13T19:30:00Z",
     "awayTeam": "Burgos CF",
     "homeTeam": "Legan\u00e9s",
-    "awayOdds": "+215",
-    "homeOdds": "+128",
+    "awayOdds": "+210",
+    "homeOdds": "+142",
     "favTeam": "Legan\u00e9s",
-    "leadML": 128,
+    "leadML": 142,
     "gap": 14
   },
   {
@@ -140,6 +96,39 @@
     "homeOdds": "-263",
     "favTeam": "Mirra Andreeva",
     "leadML": -263,
+    "gap": 14
+  },
+  {
+    "sport": "tennis",
+    "gameDate": "2026-11-13T21:30:00Z",
+    "awayTeam": "Elina Svitolina",
+    "homeTeam": "Aryna Sabalenka",
+    "awayOdds": "+158",
+    "homeOdds": "-196",
+    "favTeam": "Aryna Sabalenka",
+    "leadML": -196,
+    "gap": 18
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-14T13:00:00Z",
+    "awayTeam": "CD Castell\u00f3n",
+    "homeTeam": "Real Valladolid CF",
+    "awayOdds": "+118",
+    "homeOdds": "+194",
+    "favTeam": "CD Castell\u00f3n",
+    "leadML": 118,
+    "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-14T15:15:00Z",
+    "awayTeam": "Sporting Gij\u00f3n",
+    "homeTeam": "Real Sociedad B",
+    "awayOdds": "+180",
+    "homeOdds": "+138",
+    "favTeam": "Real Sociedad B",
+    "leadML": 138,
     "gap": 14
   },
   {
@@ -158,10 +147,10 @@
     "gameDate": "2026-11-15T18:00:00Z",
     "awayTeam": "Kansas City Chiefs",
     "homeTeam": "Atlanta Falcons",
-    "awayOdds": "-185",
-    "homeOdds": "+154",
+    "awayOdds": "-179",
+    "homeOdds": "+150",
     "favTeam": "Kansas City Chiefs",
-    "leadML": -185,
+    "leadML": -179,
     "gap": 20
   }
 ]

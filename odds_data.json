@@ -1,33 +1,11 @@
 [
   {
-    "sport": "tennis",
-    "gameDate": "2026-11-13T20:00:00Z",
-    "awayTeam": "Karolina Muchova",
-    "homeTeam": "Mirra Andreeva",
-    "awayOdds": "+232",
-    "homeOdds": "-294",
-    "favTeam": "Mirra Andreeva",
-    "leadML": -294,
-    "gap": 14
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-13T21:10:00Z",
-    "awayTeam": "Elina Svitolina",
-    "homeTeam": "Aryna Sabalenka",
-    "awayOdds": "+181",
-    "homeOdds": "-227",
-    "favTeam": "Aryna Sabalenka",
-    "leadML": -227,
-    "gap": 18
-  },
-  {
     "sport": "basketball",
     "gameDate": "2026-11-14T00:10:00Z",
     "awayTeam": "New York Knicks",
     "homeTeam": "Indiana Pacers",
     "awayOdds": "-323",
-    "homeOdds": "+261",
+    "homeOdds": "+259",
     "favTeam": "New York Knicks",
     "leadML": -323,
     "gap": 14
@@ -37,10 +15,10 @@
     "gameDate": "2026-11-14T00:10:00Z",
     "awayTeam": "Milwaukee Bucks",
     "homeTeam": "Orlando Magic",
-    "awayOdds": "+275",
-    "homeOdds": "-345",
+    "awayOdds": "+330",
+    "homeOdds": "-417",
     "favTeam": "Orlando Magic",
-    "leadML": -345,
+    "leadML": -417,
     "gap": 14
   },
   {
@@ -48,10 +26,10 @@
     "gameDate": "2026-11-14T01:10:00Z",
     "awayTeam": "Atlanta Hawks",
     "homeTeam": "Chicago Bulls",
-    "awayOdds": "-250",
-    "homeOdds": "+205",
+    "awayOdds": "-256",
+    "homeOdds": "+210",
     "favTeam": "Atlanta Hawks",
-    "leadML": -250,
+    "leadML": -256,
     "gap": 14
   },
   {
@@ -81,21 +59,21 @@
     "gameDate": "2026-11-14T18:00:00Z",
     "awayTeam": "Seattle Kraken",
     "homeTeam": "Carolina Hurricanes",
-    "awayOdds": "+255",
-    "homeOdds": "-312",
+    "awayOdds": "+300",
+    "homeOdds": "-385",
     "favTeam": "Carolina Hurricanes",
-    "leadML": -312,
+    "leadML": -385,
     "gap": 14
   },
   {
     "sport": "tennis",
-    "gameDate": "2026-11-14T20:00:00Z",
-    "awayTeam": "Mirra Andreeva",
-    "homeTeam": "Jessica Pegula",
-    "awayOdds": "-179",
-    "homeOdds": "+144",
-    "favTeam": "Mirra Andreeva",
-    "leadML": -179,
+    "gameDate": "2026-11-15T13:00:00Z",
+    "awayTeam": "Rafael Jodar",
+    "homeTeam": "Alexander Zverev",
+    "awayOdds": "+186",
+    "homeOdds": "-227",
+    "favTeam": "Alexander Zverev",
+    "leadML": -227,
     "gap": 14
   },
   {
@@ -114,10 +92,10 @@
     "gameDate": "2026-11-15T18:00:00Z",
     "awayTeam": "Kansas City Chiefs",
     "homeTeam": "Atlanta Falcons",
-    "awayOdds": "-185",
-    "homeOdds": "+154",
+    "awayOdds": "-175",
+    "homeOdds": "+145",
     "favTeam": "Kansas City Chiefs",
-    "leadML": -185,
+    "leadML": -175,
     "gap": 20
   },
   {
@@ -130,6 +108,28 @@
     "favTeam": "Buffalo Bills",
     "leadML": -417,
     "gap": 15
+  },
+  {
+    "sport": "tennis",
+    "gameDate": "2026-11-15T19:30:00Z",
+    "awayTeam": "Arthur Fils",
+    "homeTeam": "Ben Shelton",
+    "awayOdds": "+146",
+    "homeOdds": "-169",
+    "favTeam": "Ben Shelton",
+    "leadML": -169,
+    "gap": 14
+  },
+  {
+    "sport": "tennis",
+    "gameDate": "2026-11-16T13:00:00Z",
+    "awayTeam": "Frances Tiafoe",
+    "homeTeam": "Carlos Alcaraz",
+    "awayOdds": "+505",
+    "homeOdds": "-714",
+    "favTeam": "Carlos Alcaraz",
+    "leadML": -714,
+    "gap": 14
   },
   {
     "sport": "soccer",

@@ -1,24 +1,13 @@
 [
   {
-    "sport": "tennis",
-    "gameDate": "2026-11-16T19:30:00Z",
-    "awayTeam": "Flavio Cobolli",
-    "homeTeam": "Daniil Medvedev",
-    "awayOdds": "+316",
-    "homeOdds": "-400",
-    "favTeam": "Daniil Medvedev",
-    "leadML": -400,
-    "gap": 15
-  },
-  {
     "sport": "basketball",
     "gameDate": "2026-11-17T00:10:00Z",
     "awayTeam": "Orlando Magic",
     "homeTeam": "Boston Celtics",
-    "awayOdds": "+275",
-    "homeOdds": "-345",
+    "awayOdds": "+300",
+    "homeOdds": "-370",
     "favTeam": "Boston Celtics",
-    "leadML": -345,
+    "leadML": -370,
     "gap": 17
   },
   {
@@ -26,10 +15,10 @@
     "gameDate": "2026-11-17T00:10:00Z",
     "awayTeam": "Chicago Bulls",
     "homeTeam": "Cleveland Cavaliers",
-    "awayOdds": "+286",
-    "homeOdds": "-357",
+    "awayOdds": "+276",
+    "homeOdds": "-345",
     "favTeam": "Cleveland Cavaliers",
-    "leadML": -357,
+    "leadML": -345,
     "gap": 14
   },
   {
@@ -37,10 +26,10 @@
     "gameDate": "2026-11-17T00:10:00Z",
     "awayTeam": "Memphis Grizzlies",
     "homeTeam": "Washington Wizards",
-    "awayOdds": "-161",
-    "homeOdds": "+136",
+    "awayOdds": "-159",
+    "homeOdds": "+134",
     "favTeam": "Memphis Grizzlies",
-    "leadML": -161,
+    "leadML": -159,
     "gap": 14
   },
   {
@@ -49,7 +38,7 @@
     "awayTeam": "Montr\u00e9al Canadiens",
     "homeTeam": "New York Rangers",
     "awayOdds": "-114",
-    "homeOdds": "-105",
+    "homeOdds": "-106",
     "favTeam": "Montr\u00e9al Canadiens",
     "leadML": -114,
     "gap": 14
@@ -70,7 +59,7 @@
     "gameDate": "2026-11-17T02:30:00Z",
     "awayTeam": "Vancouver Canucks",
     "homeTeam": "Utah Mammoth",
-    "awayOdds": "+270",
+    "awayOdds": "+275",
     "homeOdds": "-345",
     "favTeam": "Utah Mammoth",
     "leadML": -345,
@@ -92,10 +81,32 @@
     "gameDate": "2026-11-17T19:30:00Z",
     "awayTeam": "Ben Shelton",
     "homeTeam": "Alexander Zverev",
-    "awayOdds": "+175",
-    "homeOdds": "-227",
+    "awayOdds": "+155",
+    "homeOdds": "-200",
     "favTeam": "Alexander Zverev",
-    "leadML": -227,
+    "leadML": -200,
+    "gap": 14
+  },
+  {
+    "sport": "hockey",
+    "gameDate": "2026-11-18T00:10:00Z",
+    "awayTeam": "Los Angeles Kings",
+    "homeTeam": "Boston Bruins",
+    "awayOdds": "+130",
+    "homeOdds": "-154",
+    "favTeam": "Boston Bruins",
+    "leadML": -154,
+    "gap": 14
+  },
+  {
+    "sport": "tennis",
+    "gameDate": "2026-11-18T13:00:00Z",
+    "awayTeam": "Daniil Medvedev",
+    "homeTeam": "Carlos Alcaraz",
+    "awayOdds": "+270",
+    "homeOdds": "-357",
+    "favTeam": "Carlos Alcaraz",
+    "leadML": -357,
     "gap": 14
   },
   {
@@ -136,10 +147,10 @@
     "gameDate": "2026-11-20T01:15:00Z",
     "awayTeam": "Indianapolis Colts",
     "homeTeam": "Houston Texans",
-    "awayOdds": "+410",
-    "homeOdds": "-556",
+    "awayOdds": "+470",
+    "homeOdds": "-667",
     "favTeam": "Houston Texans",
-    "leadML": -556,
+    "leadML": -667,
     "gap": 14
   },
   {
@@ -147,7 +158,7 @@
     "gameDate": "2026-11-22T18:00:00Z",
     "awayTeam": "Arizona Cardinals",
     "homeTeam": "Kansas City Chiefs",
-    "awayOdds": "+950",
+    "awayOdds": "+900",
     "homeOdds": "-1667",
     "favTeam": "Kansas City Chiefs",
     "leadML": -1667,

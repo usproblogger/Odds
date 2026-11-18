@@ -1,46 +1,13 @@
 [
   {
-    "sport": "soccer",
-    "gameDate": "2026-11-18T17:45:00Z",
-    "awayTeam": "Manchester City",
-    "homeTeam": "BK Hacken",
-    "awayOdds": "-323",
-    "homeOdds": "+525",
-    "favTeam": "Manchester City",
-    "leadML": -323,
-    "gap": 19
-  },
-  {
-    "sport": "soccer",
-    "gameDate": "2026-11-18T17:45:00Z",
-    "awayTeam": "Inter Milan",
-    "homeTeam": "Real Madrid",
-    "awayOdds": "+750",
-    "homeOdds": "-500",
-    "favTeam": "Real Madrid",
-    "leadML": -500,
-    "gap": 21
-  },
-  {
-    "sport": "tennis",
-    "gameDate": "2026-11-18T19:30:00Z",
-    "awayTeam": "Frances Tiafoe",
-    "homeTeam": "Flavio Cobolli",
-    "awayOdds": "-137",
-    "homeOdds": "+110",
-    "favTeam": "Frances Tiafoe",
-    "leadML": -137,
-    "gap": 17
-  },
-  {
     "sport": "basketball",
     "gameDate": "2026-11-19T00:10:00Z",
     "awayTeam": "Memphis Grizzlies",
     "homeTeam": "Cleveland Cavaliers",
-    "awayOdds": "+162",
-    "homeOdds": "-192",
+    "awayOdds": "+158",
+    "homeOdds": "-189",
     "favTeam": "Cleveland Cavaliers",
-    "leadML": -192,
+    "leadML": -189,
     "gap": 14
   },
   {
@@ -48,10 +15,10 @@
     "gameDate": "2026-11-19T00:10:00Z",
     "awayTeam": "Houston Rockets",
     "homeTeam": "Indiana Pacers",
-    "awayOdds": "-294",
-    "homeOdds": "+240",
+    "awayOdds": "-345",
+    "homeOdds": "+275",
     "favTeam": "Houston Rockets",
-    "leadML": -294,
+    "leadML": -345,
     "gap": 14
   },
   {
@@ -59,10 +26,10 @@
     "gameDate": "2026-11-19T00:10:00Z",
     "awayTeam": "Milwaukee Bucks",
     "homeTeam": "Miami Heat",
-    "awayOdds": "+440",
-    "homeOdds": "-588",
+    "awayOdds": "+500",
+    "homeOdds": "-714",
     "favTeam": "Miami Heat",
-    "leadML": -588,
+    "leadML": -714,
     "gap": 14
   },
   {
@@ -92,10 +59,10 @@
     "gameDate": "2026-11-19T03:10:00Z",
     "awayTeam": "Colorado Avalanche",
     "homeTeam": "Utah Mammoth",
-    "awayOdds": "-105",
-    "homeOdds": "-115",
+    "awayOdds": "-110",
+    "homeOdds": "-110",
     "favTeam": "Utah Mammoth",
-    "leadML": -115,
+    "leadML": -110,
     "gap": 14
   },
   {
@@ -103,10 +70,10 @@
     "gameDate": "2026-11-19T13:00:00Z",
     "awayTeam": "Rafael Jodar",
     "homeTeam": "Ben Shelton",
-    "awayOdds": "+176",
-    "homeOdds": "-213",
+    "awayOdds": "+180",
+    "homeOdds": "-222",
     "favTeam": "Ben Shelton",
-    "leadML": -213,
+    "leadML": -222,
     "gap": 14
   },
   {
@@ -132,6 +99,17 @@
     "gap": 14
   },
   {
+    "sport": "tennis",
+    "gameDate": "2026-11-20T13:00:00Z",
+    "awayTeam": "Flavio Cobolli",
+    "homeTeam": "Carlos Alcaraz",
+    "awayOdds": "+480",
+    "homeOdds": "-769",
+    "favTeam": "Carlos Alcaraz",
+    "leadML": -769,
+    "gap": 21
+  },
+  {
     "sport": "football",
     "gameDate": "2026-11-22T18:00:00Z",
     "awayTeam": "Arizona Cardinals",
@@ -147,21 +125,43 @@
     "gameDate": "2026-11-22T18:00:00Z",
     "awayTeam": "Baltimore Ravens",
     "homeTeam": "Carolina Panthers",
-    "awayOdds": "+120",
-    "homeOdds": "-143",
+    "awayOdds": "+114",
+    "homeOdds": "-135",
     "favTeam": "Carolina Panthers",
-    "leadML": -143,
+    "leadML": -135,
     "gap": 14
   },
   {
     "sport": "soccer",
-    "gameDate": "2026-11-26T15:30:00Z",
-    "awayTeam": "Mj\u00e4llby AIF",
-    "homeTeam": "FC Kairat",
-    "awayOdds": "+210",
-    "homeOdds": "+110",
-    "favTeam": "FC Kairat",
-    "leadML": 110,
+    "gameDate": "2026-11-26T17:45:00Z",
+    "awayTeam": "AC Milan",
+    "homeTeam": "Olympiakos Piraeus",
+    "awayOdds": "+175",
+    "homeOdds": "+145",
+    "favTeam": "Olympiakos Piraeus",
+    "leadML": 145,
+    "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-26T17:45:00Z",
+    "awayTeam": "Bayer Leverkusen",
+    "homeTeam": "Dinamo Zagreb",
+    "awayOdds": "-145",
+    "homeOdds": "+333",
+    "favTeam": "Bayer Leverkusen",
+    "leadML": -145,
+    "gap": 14
+  },
+  {
+    "sport": "soccer",
+    "gameDate": "2026-11-26T17:45:00Z",
+    "awayTeam": "Benfica",
+    "homeTeam": "Viktoria Plze\u0148",
+    "awayOdds": "-200",
+    "homeOdds": "+450",
+    "favTeam": "Benfica",
+    "leadML": -200,
     "gap": 14
   }
 ]

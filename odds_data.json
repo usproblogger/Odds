@@ -4,10 +4,10 @@
     "gameDate": "2026-11-25T00:11:00Z",
     "awayTeam": "Detroit Pistons",
     "homeTeam": "Orlando Magic",
-    "awayOdds": "-139",
-    "homeOdds": "+118",
-    "favTeam": "Detroit Pistons",
-    "leadML": -139,
+    "awayOdds": "+126",
+    "homeOdds": "-147",
+    "favTeam": "Orlando Magic",
+    "leadML": -147,
     "gap": 14
   },
   {
@@ -26,10 +26,10 @@
     "gameDate": "2026-11-25T01:10:00Z",
     "awayTeam": "Vegas Golden Knights",
     "homeTeam": "Edmonton Oilers",
-    "awayOdds": "-112",
-    "homeOdds": "-108",
+    "awayOdds": "-114",
+    "homeOdds": "-106",
     "favTeam": "Vegas Golden Knights",
-    "leadML": -112,
+    "leadML": -114,
     "gap": 14
   },
   {
@@ -46,23 +46,23 @@
   {
     "sport": "hockey",
     "gameDate": "2026-11-26T00:00:00Z",
-    "awayTeam": "Calgary Flames",
-    "homeTeam": "Pittsburgh Penguins",
-    "awayOdds": "+130",
-    "homeOdds": "-147",
-    "favTeam": "Pittsburgh Penguins",
-    "leadML": -147,
+    "awayTeam": "Winnipeg Jets",
+    "homeTeam": "Boston Bruins",
+    "awayOdds": "+142",
+    "homeOdds": "-161",
+    "favTeam": "Boston Bruins",
+    "leadML": -161,
     "gap": 14
   },
   {
     "sport": "hockey",
     "gameDate": "2026-11-26T00:00:00Z",
-    "awayTeam": "Carolina Hurricanes",
-    "homeTeam": "Tampa Bay Lightning",
-    "awayOdds": "-125",
-    "homeOdds": "+110",
-    "favTeam": "Carolina Hurricanes",
-    "leadML": -125,
+    "awayTeam": "New York Rangers",
+    "homeTeam": "Buffalo Sabres",
+    "awayOdds": "+117",
+    "homeOdds": "-133",
+    "favTeam": "Buffalo Sabres",
+    "leadML": -133,
     "gap": 14
   },
   {
@@ -70,10 +70,10 @@
     "gameDate": "2026-11-26T01:00:00Z",
     "awayTeam": "Green Bay Packers",
     "homeTeam": "Los Angeles Rams",
-    "awayOdds": "+113",
-    "homeOdds": "-133",
+    "awayOdds": "+115",
+    "homeOdds": "-135",
     "favTeam": "Los Angeles Rams",
-    "leadML": -133,
+    "leadML": -135,
     "gap": 14
   },
   {
@@ -81,10 +81,10 @@
     "gameDate": "2026-11-26T17:45:00Z",
     "awayTeam": "AC Milan",
     "homeTeam": "Olympiakos Piraeus",
-    "awayOdds": "+145",
-    "homeOdds": "+170",
+    "awayOdds": "+138",
+    "homeOdds": "+188",
     "favTeam": "AC Milan",
-    "leadML": 145,
+    "leadML": 138,
     "gap": 14
   },
   {
@@ -114,10 +114,10 @@
     "gameDate": "2026-11-26T18:00:00Z",
     "awayTeam": "Chicago Bears",
     "homeTeam": "Detroit Lions",
-    "awayOdds": "-143",
-    "homeOdds": "+120",
+    "awayOdds": "-137",
+    "homeOdds": "+116",
     "favTeam": "Chicago Bears",
-    "leadML": -143,
+    "leadML": -137,
     "gap": 14
   },
   {
